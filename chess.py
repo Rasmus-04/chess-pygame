@@ -2,8 +2,11 @@ from funktions import *
 
 
 def start():
+    get_grid()
+    start_place()
+
     def draw_window():
-        win.fill((0,0,255))
+        win.fill((0,0,0))
         draw_grid(win)
 
         for i in pos_sq:
@@ -24,6 +27,10 @@ def start():
 
             if event.type == pygame.MOUSEBUTTONUP:
                 check_click(pygame.mouse.get_pos())
+
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_r]:
+            start_place()
 
 
 if __name__ == "__main__":
